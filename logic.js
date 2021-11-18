@@ -48,7 +48,7 @@ function Area()
 }
 
 // ======#3======
-// window.onload = reloadCookie();
+window.onload = reloadCookie();
 function reloadCookie(){
     let result = confirm("The data in cookies: " + document.cookie + "\nClick OK to delete cookies.");
 	if(result)  
@@ -113,7 +113,7 @@ function dividersSearch(){
     }
     var result = "";
     arr.forEach(element => {
-        result +=" "+element;
+        result += " " + element;
     });
 
     alert(result);
@@ -122,5 +122,52 @@ function dividersSearch(){
 }
 
 // ======#4======
+
+var radio = document.getElementsByName('option');
+var radio_key = -1;
+
+radio.addEventListener('change', (event) => {
+    for (var i = 0, length = radio.length; i < length; i++) {
+        if (radio[i].checked) {
+            if(radio[i].value=='1')
+            {
+                sctn_4.textContent = Upper(sctn_4.textContent);
+            }
+            else if (radio[i].value == '0'){
+                sctn_4.textContent = Lower(sctn_4.textContent);
+            }
+            else if (radio[i].value == "-1"){
+                delete localStorage.radio_key;
+            }
+            else{return;}
+        }
+    }
+});
+
+function Upper(str){
+    radio_key = 1;
+    localStorage.setItem('radio_key', radio_key.toString());
+    return str.replace(/(^|\s)\S/g, function(a) {return a.toUpperCase()})
+}
+
+function Lower(str){
+    radio_key = 0;
+    localStorage.setItem('radio_key', radio_key.toString());
+    return str.replace(/(^|\s)\S/g, function(a) {return a.toLowerCase()})
+}
+
+Start();
+
+function Start(){
+    if(localStorage.radio_key == '1'){
+        sctn_4.textContent = Upper(sctn_4.textContent);
+    }
+    else if(localStorage.radio_key == '0'){
+        sctn_4.textContent = Upper(sctn_4.textContent);
+    }
+    else{
+        return;
+    }
+}
 
 // ======#5======
