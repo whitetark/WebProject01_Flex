@@ -50,8 +50,8 @@ function Area()
 // ======#3======
 window.onload = reloadCookie();
 function reloadCookie(){
-    if(getCookie('dividers=')){
-        let result = confirm("The data in cookies: " + getCookie('dividers=')+ "\nClick OK to delete cookies.");
+    if(getCookie("dividers")){
+        let result = confirm("The data in cookies: " + getCookie("dividers")+ "\nClick OK to delete cookies.");
 	    if(result)  
 	    {
 		    deleteCookie("cookie1");
