@@ -9,11 +9,13 @@
     <div class = "mainbox">
         <div class="header dark">
             <header class="box box1" id = "box1">
-                <map name="but1">
-                    <area shape="default" href="index.html">
-                </map>
-                <img usemap="#but1" style="height: 125px; width: 125px;" alt="img" src="releave_logo.png" >                
-                <h1 class = "altbox x" style="font-size: 50px;">Releave</h1>
+                <div class = "logo" style = "width: 65%; height: auto;">
+                    <map name="but1">
+                        <area shape="default" href="index.html">
+                    </map>
+                    <img usemap="#but1" style="height: 125px; width: 125px;" alt="img" src="releave_logo.png" >
+                </div>              
+                <h1 class = "altbox" id = "x" style="font-size: 50px;">Releave</h1>
             </header>
         </div>
         <div class = "middle">
@@ -34,10 +36,11 @@
                         </div>
                         <div class="box box5 dark" id = "box5">
                             <img style = "height: auto; width: 100%; object-fit: contain;" src = "main_photo.jpg" alt = "Future Glasses">
+                            <p></p>
                             <form name="dividers" action="">
                                 <label>Enter here some number: </label>
                                 <input id="enternum" type="text">
-                                <input id="enterbutton" type="button" value="enter">
+                                <input id="enterbutton" type="button" value="Enter">
                             </form>
                             <form name = "areablock" action = "">
                                 <label>Calculating Area Of Trapeze. Sides are equal 5 & 8. Height equals 3. Click on photo</label>
@@ -53,7 +56,7 @@
             <div class="box box4 gray" id = "box4">
                <p>New technology is changing how we look at (and in) eyeglasses. Thanks tThese reflex-inducing illusions are offered up by the Varjo XR-3 (the “XR” is for “extended reality,” a broad industry term to span both VR and digital objects in physical reality). The headset has largely achieved Finnish startup Varjo’s goal of producing virtual worlds and objects rendered at the resolution of human vision.These reflex-inducing illusions are offered up by the Varjo XR-3 (the “XR” is for “extended reality,” a broad industry term to span both VR and digital objects in physical reality). The headset has largely achieved Finnish startup Varjo’s goal of producing virtual worlds and objects rendered at the resolution of human vision.These reflex-inducing illusions are offered up by the Varjo XR-3 (the “XR” is for “extended reality,” a broad industry term to span both VR and digital objects in physical reality). The headset has largely achieved Finnish startup Varjo’s goal of producing virtual worlds and objects rendered at the resolution of human vision.o 3-D face-scanning machines, eyewear can now be custom measured within .01 millimeter. As a result, the glasses of the future are perfectly tailored to fit every unique contour of a person’s face — a very welcome change for those who exercise with eyewear. And in addition to being more accurate, it takes less than a minute to complete a scan, which makes it more efficient than those manual fittings.</p>
                <label>Register</label>
-               <select class = "caseschange" name="caseschange">
+               <select id = "cases" class = "caseschange" name="caseschange">
                 <option value="-1">Choose...</option>
                 <option value="0">Upper</option>
                 <option value="1">Lower</option>
@@ -62,8 +65,10 @@
         </div>
         <div class="ending dark">
            <footer class = "box box7" id = "box7">
-            <p>Place For AD</p>
-            <h1 class = "altbox x" style = "text-align: end; font-size: 20px;">Copyright: Releave Industries</h1>
+                <div class = "adtext" style = "width: 80%; height: auto;">
+                    <p>Place For AD</p>
+                </div>    
+                <h1 class = "altbox" style = "text-align: end; font-size: 20px;">Copyright: Releave Industries</h1>
            </footer>
         </div>
     </div>
