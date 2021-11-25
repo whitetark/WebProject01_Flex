@@ -50,8 +50,8 @@ function Area()
 // ======#3======
 window.onload = reloadCookie();
 function reloadCookie(){
-    if(getCookie("dividers")){
-        let result = confirm("The data in cookies: " + getCookie("dividers")+ "\nClick OK to delete cookies.");
+    if(getCookie("cookie1")){
+        let result = confirm("The data in cookies: " + getCookie("cookie1")+ "\nClick OK to delete cookies.");
 	    if(result)  
 	    {
 		    deleteCookie("cookie1");
@@ -115,11 +115,11 @@ function dividersSearch(){
     }
     var result = "";
     arr.forEach(element => {
-        result += " " + element;
+        result += ":" + element;
     });
 
     alert(result);
-    setCookie("dividers", result);
+    setCookie("cookie1", result);
     entarea.value="";
 }
 
