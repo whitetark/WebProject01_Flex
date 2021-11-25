@@ -1,7 +1,7 @@
 let sctn_3 = document.getElementById("box3");
 let sctn_6 = document.getElementById("box6");
 let sctn_5 = document.getElementById("box5");
-let sctn_4 = document.getElementById("box4");
+let sctn_4_cont = document.getElementById("box4").childNodes[1];
 var count = 0;
 let button = document.getElementById("enterbutton");
 
@@ -123,51 +123,46 @@ function dividersSearch(){
 
 // ======#4======
 
-var radio = document.getElementsByName('option');
+const selectElement = document.querySelector('.caseschange');
 var radio_key = -1;
 
-radio.addEventListener('change', (event) => {
-    for (var i = 0, length = radio.length; i < length; i++) {
-        if (radio[i].checked) {
-            if(radio[i].value=='1')
-            {
-                sctn_4.textContent = Upper(sctn_4.textContent);
-            }
-            else if (radio[i].value == '0'){
-                sctn_4.textContent = Lower(sctn_4.textContent);
-            }
-            else if (radio[i].value == "-1"){
-                delete localStorage.radio_key;
-            }
-            else{return;}
-        }
+selectElement.addEventListener('change', function() {
+    if(event.target.value == "0"){
+        sctn_4_cont.textContent = Upper(sctn_4_cont.textContent);
     }
-});
+    else if (event.target.value == '1'){
+        sctn_4_cont.textContent = Lower(sctn_4_cont.textContent);
+    }
+    else if (event.target.value == "-1"){
+        delete localStorage.radio_key;
+    }
+    else{return;}
+}, false);
 
 function Upper(str){
-    radio_key = 1;
+    radio_key = 0;
     localStorage.setItem('radio_key', radio_key.toString());
     return str.replace(/(^|\s)\S/g, function(a) {return a.toUpperCase()})
 }
 
 function Lower(str){
-    radio_key = 0;
+    radio_key = 1;
     localStorage.setItem('radio_key', radio_key.toString());
     return str.replace(/(^|\s)\S/g, function(a) {return a.toLowerCase()})
 }
 
-Start();
-
 function Start(){
-    if(localStorage.radio_key == '1'){
-        sctn_4.textContent = Upper(sctn_4.textContent);
+    if(localStorage.radio_key == '0'){
+        sctn_4_cont.textContent = Upper(sctn_4_cont.textContent);
     }
-    else if(localStorage.radio_key == '0'){
-        sctn_4.textContent = Upper(sctn_4.textContent);
+    else if(localStorage.radio_key == '1'){
+        sctn_4_cont.textContent = Lower(sctn_4_cont.textContent);
     }
     else{
         return;
     }
 }
+
+Start();
 
 // ======#5======
