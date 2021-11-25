@@ -50,19 +50,21 @@ function Area()
 // ======#3======
 window.onload = reloadCookie();
 function reloadCookie(){
-    let result = confirm("The data in cookies: " + document.cookie + "\nClick OK to delete cookies.");
-	if(result)  
-	{
-		deleteCookie("cookie1");
-		document.getElementById("inputString").style.display = "none";
-		document.getElementById("convertButton").style.display = "none";
+    if(getCookie('dividers=')){
+        let result = confirm("The data in cookies: " + getCookie('dividers=')+ "\nClick OK to delete cookies.");
+	    if(result)  
+	    {
+		    deleteCookie("cookie1");
+		    document.getElementById("inputString").style.display = "none";
+		    document.getElementById("convertButton").style.display = "none";
 		
-		let res = confirm("Cookies deleted.\nPress OK to reload page and start again.");
-		if(res)
-		{
-			window.location.reload();
-		}
-	} 
+		    let res = confirm("Cookies deleted.\nPress OK to reload page and start again.");
+		    if(res)
+		    {
+			    window.location.reload();
+		    }
+	    } 
+    }
 }
 
 function getCookie(name){
